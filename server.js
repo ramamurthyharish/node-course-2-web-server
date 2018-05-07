@@ -23,10 +23,13 @@ app.use((req , res , next) => {
   next();
 });
 
-app.use((req , res , next) => {
-  res.render('maintenance.hbs');
-});
 
+
+app.get('/projects' , (req , res) => {
+  res.render('projects.hbs' , {
+    pageTitle : 'Projects : Hr'
+  });
+});
 
 app.use(express.static(__dirname + '/public'));
 
